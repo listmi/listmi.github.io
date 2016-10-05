@@ -1,0 +1,43 @@
+body {
+  background-color: #448844;
+  color: white;
+  padding-top: 0;
+  font-size: 2em;
+}
+
+.header {
+  margin-top: 5%;
+  margin-bottom: 20%;
+}
+
+.listmi-theme {
+  background-color: #55aa55;
+  padding-bottom: 3em;
+}
+
+h1, h2, h3 {
+  font-family: 'Hind', sans-serif;
+}
+
+i.mega {
+  font-size: 13em;
+  color: #55aa55;
+}
+
+.btn-primary {
+  background-color: #448844;
+  border: 1px solid #3c773c;
+}
+
+.btn-primary:hover {
+  background-color: #3c773c;
+  border-color: #224422;
+}
+
+.explanatory-graphics .fa {
+  font-size: 7em;
+}
+
+.row {
+  margin-bottom: 2em;
+}
