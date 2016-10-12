@@ -2,6 +2,14 @@
 
 ## Deployment to firebase
 
+### Automatic, on commit
+
+A [Travis CI build](https://travis-ci.org/listmi/listmi.github.io) deploys all
+commits that are pushed or merged to the branches listed in the `.travis.yml`
+file.
+
+### Manual
+
 Instructions below are summarised from the
 [firebase docs](https://firebase.google.com/docs/hosting/).
 
