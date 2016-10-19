@@ -1,6 +1,30 @@
+/*
+Färgschema för listmi
+Primärfärg:
+#005724 shade
+#007B33
+#00af49 full
+#80D7A4
+#CCEFDB tint
+
+Komplementfärg - neutral
+#0E2424 shade
+#143333
+#1D4948 full
+#8EA4A4
+#D2DBDA tint
+
+Komplementfärg - klick
+#7D5106 shade
+#B07209
+#FBA30D full
+#FDD186
+#FEEDCF tint
+*/
+
 body {
   background: #fff; /* For browsers that do not support gradients */
-  color: #2d2d2d;
+  color: #1D4948;
   padding-top: 0;
 }
 
@@ -8,8 +32,8 @@ body {
 }
 
 .teaser {
-  background-color: #55aa55;
-  color: #2d2d2d;
+  background-color: #00A746; /* 5% of primary */
+  color: #143333;
   padding: 1em;
   margin-bottom: 20px;
   /* text-align: center; */
@@ -43,7 +67,7 @@ h1.modal-title {
 }
 
 h2 {
-    color: #408040;
+    color: #007b33; /* 30% primary */
     font-size: 1.5em;
     margin-top: 1.2em;
 }
@@ -61,13 +85,13 @@ p.slogan {
 }
 
 .footer {
-  background: #2d2d2d;
-  color: #fff;
+  background: #143333;
+  color: #d2dbda;
   text-align: center;
 }
 
 .footer h2 {
-  color: #55aa55;
+  color: #8EA4A4;
 }
 
 .footer p {
@@ -75,15 +99,15 @@ p.slogan {
 }
 
 .btn-primary {
-  background-color: #55aa55; /* #448844 */
-  color: #2d2d2d;
+  background-color: #00af49; /* #00af49 */
+  color: #0E2424;
   border: none;
   font-size: 16px;
 }
 
 .btn-primary:hover {
-  background-color: #3c773c;
-  border-color: #224422;
+  background-color: #007B33;
+  border-color: #005724;
 }
 
 .btn-primary:active,
@@ -95,8 +119,8 @@ p.slogan {
 .btn-primary.active:focus,
 .btn-primary:active.focus,
 .btn-primary.active.focus {
-    background-color: #3c773c;
-    border-color: #224422;
+    background-color: #007B33;
+    border-color: #005724;
 }
 
 .modal-header {
