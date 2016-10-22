@@ -20,12 +20,39 @@ Komplementfärg - klick
 #FBA30D full
 #FDD186
 #FEEDCF tint
+
+#09BCB9 for links?
 */
 
 body {
   background: #fff; /* For browsers that do not support gradients */
   color: #1D4948;
+  font-family: 'Droid Sans', sans-serif;
   padding-top: 0;
+}
+
+a {
+  color: #c6149d;
+  text-decoration: underline;
+}
+
+a:hover {
+  background-color: #c6149d;
+  color: #fff;
+
+}
+
+a.logolink:hover {
+  background-color: transparent;
+  color: inherit;
+}
+
+dl {
+  margin-top: 15px;
+}
+
+dd {
+  margin-bottom: 15px;
 }
 
 .header {
@@ -50,11 +77,6 @@ body {
 
 .main {
   background-color: #fff;
-}
-
-h1, h2, h3, p {
-  font-family: 'Droid Sans', sans-serif;
-
 }
 
 h1 {
@@ -84,6 +106,7 @@ p.slogan {
   font-size: 1.6em;
 }
 
+/* FOOTER */
 .footer {
   background: #143333;
   color: #d2dbda;
@@ -98,6 +121,11 @@ p.slogan {
   margin: 10px 0 20px 0;
 }
 
+.footer .row {
+  margin-bottom: 20px;
+}
+
+/* BUTTONS */
 .btn-primary {
   background-color: #00af49; /* #00af49 */
   color: #0E2424;
@@ -150,6 +178,14 @@ p.slogan {
     align-items: center;
 }
 
+/* ALERTS */
+.alert-warning {
+    background-color: #FEEDCF;
+    border-radius: 0;
+    color: #6d4602;
+}
+
+/* MEDIA QUERIES */
 @media (min-width: 768px) {
   .teaser,
   .row {
