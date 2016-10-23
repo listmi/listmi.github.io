@@ -44,10 +44,13 @@ function postForm() {
       dataType: "xml",
       statusCode: {
         0: function (){
-          window.location.href = window.location.host + "/tack/";
+          var tackSida = location.host + "/tack/";
+          alert(tackSida);
+          window.location = tackSida;
         },
         200: function (){
-          window.location.href = window.location.host + "/tack/";
+          var tackSida = location.host + "/tack/";
+          window.location = tackSida;
         }
       }
     });
