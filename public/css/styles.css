@@ -25,10 +25,24 @@ Komplementfärg - klick
 */
 
 body {
-  background: #fff; /* For browsers that do not support gradients */
+  background: #fff;
   color: #1D4948;
   font-family: 'Droid Sans', sans-serif;
   padding-top: 0;
+}
+
+.header {
+  background-color: #00A746; /* 5% of primary */
+  margin-bottom: 20px;
+}
+
+.startpage .header {
+  background-image: url('../images/bg-tant-cropped.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: inset 0 0 0 1000px rgba(0, 167,70,.7); /* #00A746 = 5% of primary */
+  background-size: cover;
+  height: 95vh;
 }
 
 a {
@@ -55,19 +69,18 @@ dd {
   margin-bottom: 15px;
 }
 
-.header {
-}
-
 .teaser {
-  background-color: #00A746; /* 5% of primary */
   color: #143333;
   padding: 1em;
   margin-bottom: 20px;
-  /* text-align: center; */
+  text-align: center;
 }
 
 .teaser h1 {
     color: #fff;
+    text-shadow: 1px 1px #005724;
+    font-size: 3.5em;
+    margin-bottom: 1em;
 }
 
 .logolink {
@@ -103,7 +116,7 @@ p {
 }
 
 p.slogan {
-  font-size: 1.6em;
+  font-size: 1.9em;
 }
 
 /* FOOTER */
@@ -151,6 +164,35 @@ p.slogan {
     border-color: #005724;
 }
 
+
+/* TEASER BUTTONS  */
+.teaser .btn-primary {
+  background-color: #FBA30D;
+  color: #0E2424;
+  border: none;
+  font-size: 18px;
+  padding: 1em;
+}
+
+.teaser .btn-primary:hover {
+  background-color: #FDD186;
+  border-color: #005724;
+}
+
+.teaser .btn-primary:active,
+.teaser .btn-primary.active,
+.teaser .btn-primary:focus,
+.teaser .btn-primary:active:hover,
+.teaser .btn-primary.active:hover,
+.teaser .btn-primary:active:focus,
+.teaser .btn-primary.active:focus,
+.teaser .btn-primary:active.focus,
+.teaser .btn-primary.active.focus {
+    background-color: #FDD186;
+    border-color: #FBA30D;
+}
+
+/** MODALS **/
 .modal-header {
   border-bottom: 0;
   padding: 15px 15px 0 15px;
@@ -183,6 +225,12 @@ p.slogan {
     background-color: #FEEDCF;
     border-radius: 0;
     color: #6d4602;
+}
+
+.alert-success {
+  background-color: #CCEFDB;
+  border-radius: 0;
+  color: #6d4602;
 }
 
 /* MEDIA QUERIES */
