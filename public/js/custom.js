@@ -36,6 +36,8 @@ function validateEmail(email) {
 function postForm() {
   var email = $('#email').val();
   var accepted = $('#acceptConditions').prop('checked');
+  var tackSida = location.protocol + '//'+ location.host + "/tack/";
+  alert(tackSida);
   if ((accepted) && ((email !== "") && (validateEmail(email)))) {
     $.ajax({
       url: "https://docs.google.com/a/matkvitton.se/forms/d/e/1FAIpQLSchMng-DVpm1WCxrOa_i73fzCqj_P9BxJ1MW6DhYxoqQbxQug/formResponse",
@@ -44,12 +46,9 @@ function postForm() {
       dataType: "xml",
       statusCode: {
         0: function (){
-          var tackSida = location.host + "/tack/";
-          alert(tackSida);
           window.location = tackSida;
         },
         200: function (){
-          var tackSida = location.host + "/tack/";
           window.location = tackSida;
         }
       }
