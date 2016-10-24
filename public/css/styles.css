@@ -14,7 +14,7 @@ Komplementfärg - neutral
 #8EA4A4
 #D2DBDA tint
 
-Komplementfärg - klick
+Komplementfärg - orange
 #7D5106 shade
 #B07209
 #FBA30D full
@@ -22,6 +22,9 @@ Komplementfärg - klick
 #FEEDCF tint
 
 #09BCB9 for links?
+
+#620700 (darkred)
+#AF0C00 (red) for errors
 */
 
 body {
@@ -164,6 +167,10 @@ p.slogan {
     border-color: #005724;
 }
 
+.btn-warning {
+  background-color: #FBA30D;
+  color: #4f3202;
+}
 
 /* TEASER BUTTONS  */
 .teaser .btn-primary {
@@ -221,16 +228,42 @@ p.slogan {
 }
 
 /* ALERTS */
+.alert {
+  border-radius: 0;
+  margin-bottom: 0;
+  border: 0;
+}
+
+.alert h1 {
+  font-size: 1em;
+  font-weight: bold;
+  display: inline;
+}
+
+.alert p {
+  font-size: 1em;
+}
+
+/* länkar i alertrutor har samma färg som texten men är understrukna. */
+.alert a {
+  color: inherit;
+  border: 0;
+}
+
+/* tänkte att felmeddelandet kunde sticka ut. */
+.alert-danger {
+    background-color: #AF0C00; /* #ffe4e2 - trött på rosa */
+    color: #fff;
+}
+
 .alert-warning {
     background-color: #FEEDCF;
-    border-radius: 0;
     color: #6d4602;
 }
 
 .alert-success {
   background-color: #CCEFDB;
-  border-radius: 0;
-  color: #6d4602;
+  color: #005021;
 }
 
 /* MEDIA QUERIES */

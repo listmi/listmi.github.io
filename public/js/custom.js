@@ -19,11 +19,11 @@ if (getCookie('listmiCookie').length > 0) {
 
 $( "#closeDisclaimerBtn" ).click(function() {
   var expireDate = new Date();
-  //expireDate.setFullYear(expireDate.getFullYear() + 1);
-  document.cookie = "listmiCookie=accepted;"; // expires=" + expireDate.getUTCDate();
+  expireDate.setFullYear(expireDate.getFullYear() + 1);
+  document.cookie = "listmiCookie=accepted;expires=" + expireDate.getUTCDate();
   $( "#cookieDisclaimer" ).fadeOut(600, 'linear', function() {
     $("#cookieDisclaimerConfirmation").fadeIn(600, 'linear');
-    $('#cookieDisclaimerConfirmation').delay(2000).fadeOut(600, 'linear');
+    $('#cookieDisclaimerConfirmation').delay(8000).fadeOut(600, 'linear');
   });
 
 });
@@ -53,7 +53,7 @@ function postForm() {
       }
     });
   } else {
-    alert("Oj! Nu blev det knas! Prova att försöka igen och om felet inte ger med sig får du skicka oss ett mail (good luck with that!).");
+    $('#errorMessage').show(); // visar felmeddelande
   }
 }
 
