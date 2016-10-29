@@ -40,12 +40,12 @@ body {
 }
 
 .startpage .header {
+  background: #143333; /* fallback */
   background-image: url('../images/bg-tant-cropped.jpg');
   background-repeat: no-repeat;
   background-position: center;
-  box-shadow: inset 0 0 0 1000px rgba(0, 167,70,.7); /* #00A746 = 5% of primary */
+  box-shadow: inset 0 0 0 1000px rgba(20, 51, 51,.7); /* rgba(0, 167,70,.7) #00A746 = 5% of primary */
   background-size: cover;
-  height: 95vh;
 }
 
 a {
@@ -73,16 +73,15 @@ dd {
 }
 
 .teaser {
-  color: #143333;
-  padding: 1em;
+  color: #d2dbda;
+  padding: 5em 1em 8em 1em;
   margin-bottom: 20px;
   text-align: center;
 }
 
 .teaser h1 {
     color: #fff;
-    text-shadow: 1px 1px #005724;
-    font-size: 3.5em;
+    font-size: 2.5em;
     margin-bottom: 1em;
 }
 
@@ -119,7 +118,7 @@ p {
 }
 
 p.slogan {
-  font-size: 1.9em;
+  font-size: 1.6em;
 }
 
 /* FOOTER */
@@ -267,13 +266,27 @@ p.slogan {
 }
 
 /* MEDIA QUERIES */
+@media (orientation: landscape) {
+  .teaser {
+    padding-top: 1.5em;
+    padding-bottom: 5em;
+  }
+
+  .teaser h1 {
+    margin-bottom: .5em;
+  }
+}
+
 @media (min-width: 768px) {
-  .teaser,
+  .teaser {
+    padding: 8em 1em 10em 1em;
+  }
+
   .row {
-    margin-bottom: 50px;
+    margin-bottom: 5em;
   }
 
   .teaser .row {
-    margin-bottom: 20px;
+    margin-bottom: 1.5em;
   }
 }
