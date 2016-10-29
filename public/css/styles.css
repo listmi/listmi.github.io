@@ -28,15 +28,14 @@ Komplementfärg - orange
 */
 
 body {
-  background: #fff;
-  color: #1D4948;
+  background: #143333;
+  color: #d2dbda;
   font-family: 'Droid Sans', sans-serif;
   padding-top: 0;
 }
 
 .header {
-  background-color: #00A746; /* 5% of primary */
-  margin-bottom: 20px;
+  background-color: #143333; /* #00A746 = 5% of primary */
 }
 
 .startpage .header {
@@ -49,19 +48,22 @@ body {
 }
 
 a {
-  color: #c6149d;
-  text-decoration: underline;
+  color: #d2dbda;
+  text-decoration: none;
 }
 
 a:hover {
-  background-color: #c6149d;
   color: #fff;
-
+  text-decoration: underline;
 }
 
 a.logolink:hover {
   background-color: transparent;
   color: inherit;
+}
+
+.active {
+  color: #8EA4A4;
 }
 
 dl {
@@ -75,7 +77,6 @@ dd {
 .teaser {
   color: #d2dbda;
   padding: 5em 1em 8em 1em;
-  margin-bottom: 20px;
   text-align: center;
 }
 
@@ -87,15 +88,27 @@ dd {
 
 .logolink {
   display: inline-block;
-  padding: 20px 0 20px 0;
 }
 
 .main {
-  background-color: #fff;
+  background: #fff;
+  color: #1D4948;
+  padding: 20px 0;
+}
+
+.main a {
+  color: #c6149d;
+  text-decoration: underline;
+}
+
+.main a:hover {
+  background-color: #c6149d;
+  color: #fff;
 }
 
 h1 {
-    margin-bottom: 10px;
+  font-size: 2em;
+  margin-bottom: 10px;
 }
 
 h1.modal-title {
@@ -121,10 +134,96 @@ p.slogan {
   font-size: 1.6em;
 }
 
+/* NAVIGATION */
+.nav > li > span {
+    color: #8EA4A4;
+    position: relative;
+    display: block;
+    padding: 15px;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+  text-decoration: underline;
+  background-color: #d2dbda;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+.navbar-brand {
+  height: auto;
+  padding: 0;
+}
+
+.navbar-default {
+  background-color: transparent;
+  border-color: transparent;
+  padding: 2em 0;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #d2dbda;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #fff;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #fff;
+    background-color: transparent;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: transparent;
+}
+
+.navbar-default .navbar-collapse {
+  border-color: #d2dbda;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #d2dbda;
+}
+
+.navbar-toggle {
+  border: 0;
+  margin-top: 0.7em;
+  color: #fff;
+  font-size: 2em;
+}
+
+/* MISC */
+.enterprise-info {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.enterprise-info img.logo {
+    vertical-align: baseline;
+    margin-right: 3px;
+}
+
+.enterprise-info .fa {
+  margin-right: 4px;
+}
+
+.enterprise-info a {
+  text-decoration: none;
+}
+
+.enterprise-info a:hover {
+  background-color: transparent;
+  text-decoration: underline;
+}
+
 /* FOOTER */
 .footer {
-  background: #143333;
-  color: #d2dbda;
   text-align: center;
 }
 
@@ -142,15 +241,20 @@ p.slogan {
 
 /* BUTTONS */
 .btn-primary {
-  background-color: #00af49; /* #00af49 */
+  background-color: #FBA30D;
   color: #0E2424;
   border: none;
-  font-size: 16px;
+  font-size: 18px;
+}
+
+.btn-lg {
+  padding: 1em 2em;
 }
 
 .btn-primary:hover {
-  background-color: #007B33;
+  background-color: #FDD186;
   border-color: #005724;
+  color: #163a3a;
 }
 
 .btn-primary:active,
@@ -162,6 +266,37 @@ p.slogan {
 .btn-primary.active:focus,
 .btn-primary:active.focus,
 .btn-primary.active.focus {
+    background-color: #FDD186;
+    border-color: #FBA30D;
+}
+
+/*
+.btn-primary {
+  background-color: ;
+  border: none;
+  font-size: 16px;
+}
+*/
+
+.footer .btn-primary {
+  background-color: #00af49; /* grön */
+  color: #0E2424;
+}
+
+.footer .btn-primary:hover {
+  background-color: #007B33;
+  border-color: #005724;
+}
+
+.footer .btn-primary:active,
+.footer .btn-primary.active,
+.footer .btn-primary:focus,
+.footer .btn-primary:active:hover,
+.footer .btn-primary.active:hover,
+.footer .btn-primary:active:focus,
+.footer .btn-primary.active:focus,
+.footer .btn-primary:active.focus,
+.footer .btn-primary.active.focus {
     background-color: #007B33;
     border-color: #005724;
 }
@@ -169,33 +304,6 @@ p.slogan {
 .btn-warning {
   background-color: #FBA30D;
   color: #4f3202;
-}
-
-/* TEASER BUTTONS  */
-.teaser .btn-primary {
-  background-color: #FBA30D;
-  color: #0E2424;
-  border: none;
-  font-size: 18px;
-  padding: 1em;
-}
-
-.teaser .btn-primary:hover {
-  background-color: #FDD186;
-  border-color: #005724;
-}
-
-.teaser .btn-primary:active,
-.teaser .btn-primary.active,
-.teaser .btn-primary:focus,
-.teaser .btn-primary:active:hover,
-.teaser .btn-primary.active:hover,
-.teaser .btn-primary:active:focus,
-.teaser .btn-primary.active:focus,
-.teaser .btn-primary:active.focus,
-.teaser .btn-primary.active.focus {
-    background-color: #FDD186;
-    border-color: #FBA30D;
 }
 
 /** MODALS **/
@@ -265,6 +373,22 @@ p.slogan {
   color: #005021;
 }
 
+/* TABLES */
+caption {
+  color: #007b33;
+  font-size: 1.5em;
+}
+
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  font-weight: normal;
+  padding-left: 0;
+}
+
 /* MEDIA QUERIES */
 @media (orientation: landscape) {
   .teaser {
@@ -288,5 +412,14 @@ p.slogan {
 
   .teaser .row {
     margin-bottom: 1.5em;
+  }
+
+  .navbar {
+    margin-bottom: 20px;
+  }
+
+  .navbar-default .navbar-nav > li > a,
+  .navbar-default .navbar-nav > li > span {
+      margin-top: 1.5em;
   }
 }
