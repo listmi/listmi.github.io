@@ -40,7 +40,7 @@ body {
 
 .startpage .header {
   background: #143333; /* fallback */
-  background-image: url('../images/bg-tant-cropped.jpg');
+  background-image: url('../images/groceries.jpg'); /* https://www.flickr.com/photos/truk/23335164/ */
   background-repeat: no-repeat;
   background-position: center;
   box-shadow: inset 0 0 0 1000px rgba(20, 51, 51,.7); /* rgba(0, 167,70,.7) #00A746 = 5% of primary */
@@ -84,6 +84,19 @@ dd {
     color: #fff;
     font-size: 2.5em;
     margin-bottom: 1em;
+}
+
+.anchor-arrow {
+    color: #0E2424;
+    font-size: 2.5em;
+    background-color: #FBA30D;
+    width: 1.8em;
+    height: 1.8em;
+    border-radius: 100%;
+    text-align: center;
+    display: inline-block;
+    line-height: 1.7em;
+    margin-top: 2.5em;
 }
 
 .logolink {
@@ -403,7 +416,7 @@ caption {
 
 @media (min-width: 768px) {
   .teaser {
-    padding: 8em 1em 10em 1em;
+    padding: 8em 1em 14em 1em;
   }
 
   .row {
