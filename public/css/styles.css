@@ -325,6 +325,10 @@ p.slogan {
   padding: 15px 15px 0 15px;
 }
 
+.modal-body {
+  color: #1D4948;
+}
+
 .modal-footer {
     border-top: 0;
     text-align: center;

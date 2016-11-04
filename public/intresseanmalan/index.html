@@ -30,7 +30,7 @@
 <link rel="mask-icon" href="../images/favicon/safari-pinned-tab.svg"><!-- color="#5bbad5" -->
 <meta name="theme-color" content="#ffffff">
 <!-- /Favicons -->
-<link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet"/>
 <meta name="theme-color" content="#ffffff">
 <script>
 var submitted=false;
@@ -46,6 +46,28 @@ var submitted=false;
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5KXXMM" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="personuppgifterModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Stäng"><span aria-hidden="true">&times;</span></button>
+          <h2 class="modal-title" id="myModalLabel">Behandling av personuppgifter</h2>
+        </div>
+        <div class="modal-body">
+          <p>listmi skulle vilja att du lämnar vissa uppgifter om dig själv till bolaget.</p>
+          <p>Vi skulle vilja behandla personuppgifter om dig för att få en bild av hur du och andra svenskar brukar handla hushållsvaror för att på så sätt kunna utveckla nya typer av matinköpstjänster.</p>
+          <p>De uppgifter vi avser att samla in och behandla är namn, ålder och e-mail adress.</p>
+          <p>Du avgör själv om du vill lämna några uppgifter till oss. Uppgifterna kommer endast att behandlas av oss inom företaget. Avidentifierade uppgifter, som inte går att härleda till en individ, kan dock komma att lämnas ut till externa mottagare såsom företag inom catering-, matgrossist-, matleverantörer och storkökbranschen.</p>
+          <p>Du har enligt 26 § personuppgiftslagen (1998:204) rätt att gratis, en gång per kalenderår, efter skriftligt undertecknad ansökan ställd till oss, få besked om vilka personuppgifter om dig som vi behandlar och hur vi behandlar dessa. Du har också rätt att enligt 28 § personuppgiftslagen begära rättelse i fråga om personuppgifter som vi behandlar om dig.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Stäng</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="listmi-theme">
     <div id="errorMessage" class="alert alert-danger" style="display: none;" role="alert">
@@ -87,30 +109,9 @@ var submitted=false;
                 <input id="email" type="email" class="form-control" required="" oninvalid="this.setCustomValidity('Du måste ange en korrekt e-postadress.')"/>
               </div>
               <fieldset class="form-group">
-                <legend class="sr-only">villkor</legend>
+                <legend class="sr-only">behandling av personuppgifter</legend>
                 <div class="checkbox">
-                  <label><input type="checkbox" id="acceptConditions" required=""  oninvalid="this.setCustomValidity('Du måste godkänna våra användarvillkor.')"/> Jag accepterar <a href="/villkor/" target="_blank" data-toggle="modal" data-target="#villkorModal">listmis villkor <span class="fa fa-external-link" aria-hidden="true"></span></a></label>
-                  <!-- Modal -->
-                  <div class="modal fade" id="villkorModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Stäng"><span aria-hidden="true">&times;</span></button>
-                          <h2 class="modal-title" id="myModalLabel">listmis villkor</h2>
-                        </div>
-                        <div class="modal-body">
-                          <p>listmi skulle vilja att du lämnar vissa uppgifter om dig själv till bolaget.</p>
-                          <p>Vi skulle vilja behandla personuppgifter om dig för att få en bild av hur du och andra svenskar brukar handla hushållsvaror för att på så sätt kunna utveckla nya typer av matinköpstjänster.</p>
-                          <p>De uppgifter vi avser att samla in och behandla är namn, ålder och e-mailadress.</p>
-                          <p>Du avgör själv om du vill lämna några uppgifter till oss. Uppgifterna kommer endast att behandlas av oss inom företaget. Avidentifierade uppgifter, som inte går att härleda till en individ, kan dock komma att lämnas ut till externa mottagare såsom företag inom catering-, matgrossist-, matleverantörer och storkökbranschen.</p>
-                          <p>Du har enligt 26 § personuppgiftslagen (1998:204) rätt att gratis, en gång per kalenderår, efter skriftligt undertecknad ansökan ställd till oss, få besked om vilka personuppgifter om dig som vi behandlar och hur vi behandlar dessa. Du har också rätt att enligt 28 § personuppgiftslagen begära rättelse i fråga om personuppgifter som vi behandlar om dig.</p>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-default" data-dismiss="modal">Stäng</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <label><input type="checkbox" id="acceptConditions" required=""  oninvalid="this.setCustomValidity('Du måste godkänna våra användarvillkor.')"/> Jag accepterar att listmi <a href="#" target="_blank" data-toggle="modal" data-target="#personuppgifterModal">behandlar mina personuppgifter<span class="fa fa-external-link" aria-hidden="true"></span></a></label>
                 </div>
               </fieldset>
               <input type="submit" class="btn btn-primary btn-block btn-lg" value="Skicka" />
