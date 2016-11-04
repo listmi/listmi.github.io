@@ -16,18 +16,18 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-5KXXMM');</script>
 <!-- End Google Tag Manager -->
-<title>Sign up | listmi</title>
+<title>listmi</title>
 <!-- Styles -->
 <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/font-awesome-4.6.3/css/font-awesome.min.css">
-<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/styles.css?">
 
 <!-- Favicons etc. -->
 <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" href="/images/favicon/favicon-32x32.png?v=2" sizes="32x32">
 <link rel="icon" type="image/png" href="/images/favicon/favicon-16x16.png?v=2" sizes="16x16">
 <link rel="manifest" href="/images/favicon/manifest.json">
-<link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg"><!-- not allowed attribute: color="#5bbad5" -->
 <meta name="theme-color" content="#ffffff">
 <!-- /Favicons -->
 <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
@@ -43,116 +43,131 @@
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5KXXMM" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-
-  <!-- Modal -->
-  <div class="modal fade" id="subscriptionModal" tabindex="-1" role="dialog" aria-labelledby="subscriptionModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h1 class="modal-title" id="subscriptionModalLabel">Behandling av personuppgifter</h1>
-        </div>
-        <div class="modal-body">
-          <p>listmi skulle vilja att du lämnar vissa uppgifter om dig själv till bolaget.</p>
-          <p>Vi skulle vilja behandla personuppgifter om dig för att få en bild av hur du och andra svenskar brukar handla hushållsvaror för att på så sätt kunna utveckla nya typer av matinköpstjänster.</p>
-          <p>De uppgifter vi avser att samla in och behandla är namn, ålder och e-mail adress.</p>
-          <p>Du avgör själv om du vill lämna några uppgifter till oss. Uppgifterna kommer endast att behandlas av oss inom företaget. Avidentifierade uppgifter, som inte går att härleda till en individ, kan dock komma att lämnas ut till externa mottagare såsom företag inom catering-, matgrossist-, matleverantörer och storkökbranschen.</p>
-          <p>Du har enligt 26 § personuppgiftslagen (1998:204) rätt att gratis, en gång per kalenderår, efter skriftligt undertecknad ansökan ställd till oss, få besked om vilka personuppgifter om dig som vi behandlar och hur vi behandlar dessa. Du har också rätt att enligt 28 § personuppgiftslagen begära rättelse i fråga om personuppgifter som vi behandlar om dig.</p>
-        </div>
-        <div class="modal-footer">
-          <form method="post" action="thank-you.html">
-            <label for="samtycke">Samtycker du till att listmi behandlar personuppgifter om dig i enlighet med det ovanstående?</label>
-            <input type="hidden" id="samtycke" value="given"/>
-            <div class="form-group">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Nej, jag samtycker inte</button>
-            </div>
-            <div class="form-group">
-              <input type="submit" class="btn btn-primary" value="Ja, jag samtycker" />
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- /Modal -->
-
-  <div class="listmi-theme">
+  <div class="startpage">
     <header class="header">
       <div class="container">
-        <a href="index.html" class="logolink">
-          <img src="images/logo_green.svg" alt="listmi Logotype" width="150" />
-        </a></div>
-      </header>
-      <main class="main">
-        <div class="teaser">
-          <div class="container">
-            <div class="row">
-              <div class="col-xs-12 col-sm-9 col-sm-offset-2">
-                <h1 style="inline">Skriver du en inköpslista <em>igen</em>?</h1>
-                <p class="slogan">Lägg ner pennan och låt listmi göra det åt dig!</p>
-              </div>
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
+                <span class="sr-only">Visa meny</span>
+                <span class="fa fa-bars" aria-hidden="true"></span>
+              </button>
+              <a href="/" class="logolink navbar-brand">
+                <img src="images/logo_white.svg" alt="listmi Logotype" width="150" />
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="main-menu">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="/intresseanmalan/">intresseanmälan</a></li>
+                <li><a href="/om-oss/">Om oss</a></li>
+              </ul>
             </div>
           </div>
-        </div>
+        </nav>
+      </div>
+      <div class="teaser">
         <div class="container">
-          <h2 class="visible-xs-block">Scanna dina kvitton</h2>
-          <div class="row vertical-align">
-            <div class="col-xs-8 col-sm-5 col-sm-offset-2">
-              <h2 class="hidden-xs">Scanna dina kvitton</h2>
-              <p>För att listmi ska kunna veta vad just du brukar köpa när du är i affären, skannar du helt enkelt in dina kvitton i applikationen. Ju fler, desto bättre.</p>
-            </div>
-            <div class="col-xs-4 col-sm-2">
-              <img src="images/scanna.png" alt="Illustration för scanna dina kvitton" class="img-responsive"/>
-            </div>
-          </div>
-          <h2 class="visible-xs-block">Din personliga inköpslista skapas automatiskt</h2>
-          <div class="row vertical-align">
-            <div class="col-xs-8 col-sm-5 col-sm-offset-2">
-              <h2 class="hidden-xs">Din personliga inköpslista skapas automatiskt</h2>
-              <p>Applikationen autogenererar en lista baserat på dina basbehov. Allt du behöver göra är att kontrollera och bekräfta listan.</p>
-            </div>
-            <div class="col-xs-4 col-sm-2">
-              <img src="images/inkopslista.png" alt="Illustration för bekräfta listan" class="img-responsive"/>
-            </div>
-          </div>
-          <h2 class="visible-xs-block">Veckans meny</h2>
           <div class="row">
-            <div class="col-xs-8 col-sm-5 col-sm-offset-2">
-              <h2 class="hidden-xs">Veckans meny</h2>
-              <p>Skapa en veckomeny och lägg smidigt in ingredienserna som saknas i grundlistan.</p>
-            </div>
-            <div class="col-xs-4 col-sm-2">
-              <img src="images/veckomeny.png" alt="Illustration för veckomeny" class="img-responsive"/>
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+              <h1 style="inline">Skriver du en inköpslista <em>igen</em>?</h1>
+              <p class="slogan">Lägg ner pennan och låt listmi göra det åt dig!</p>
             </div>
           </div>
-          <h2 class="visible-xs-block">Gör det kul att handla!</h2>
-          <div class="row vertical-align">
-            <div class="col-xs-12 col-sm-5 col-sm-offset-2">
-              <h2 class="hidden-xs">Gör det kul att handla!</h2>
-              <p>Med listmi blir det kul att handla. Tävla med din käresta och se i realtid när ni plockar varorna affären! Eller föredrar du att få maten hemskickad? Det är lätt ordnat med ett snabbt klick!</p>
+          <!--
+          <div class="row">
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+              <a href="#main" class="btn btn-primary btn-lg" />Ge mig mer information</a>
             </div>
-            <div>
-            </main>
-            <footer class="footer">
-              <div class="container">
-                <div class="row">
-                  <div class="col-xs-12 col-sm-5 col-sm-offset-2">
-                    <h2>Få tid till allt det där andra...</h2>
-                    <p>Spara tid, pengar och frustration och låt listmi ta hand om de tråkiga bitarna av mathandlandet.</p>
-                    <!-- Button trigger modal
-                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#subscriptionModal">
-                      Jag vill vara med när appen släpps!
-                    </button>
-                    -->
-                  </div>
-                </div>
-              </div>
-            </footer>
-          </div><!-- container -->
+          </div>
+        -->
         </div>
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="js/bootstrap.min.js"></script>
-      </body>
-      </html>
+        <!-- Snart kräks jag -->
+        <a href="#main" class="anchor-arrow">
+          <span class="fa fa-chevron-down" aria-hidden="true"></span>
+          <span class="sr-only">Visa mig hur</span>
+        </a>
+      </div>
+    </header>
+    <main class="main">
+      <a name="main"></a>
+      <div class="container">
+        <h2 class="visible-xs-block">Scanna dina kvitton</h2>
+        <div class="row vertical-align">
+          <div class="col-xs-8 col-sm-7 col-sm-offset-2">
+            <h2 class="hidden-xs">Scanna dina kvitton</h2>
+            <p>För att listmi ska kunna veta vad just du brukar köpa när du är i affären, skannar du helt enkelt in dina kvitton i applikationen. Ju fler, desto bättre.</p>
+          </div>
+          <div class="col-xs-4 col-sm-2">
+            <img src="images/scanna.png" alt="Illustration för scanna dina kvitton" class="img-responsive"/>
+          </div>
+        </div>
+        <h2 class="visible-xs-block">Din personliga inköpslista skapas automatiskt</h2>
+        <div class="row vertical-align">
+          <div class="col-xs-8 col-sm-7 col-sm-offset-2">
+            <h2 class="hidden-xs">Din personliga inköpslista skapas automatiskt</h2>
+            <p>Applikationen autogenererar en lista baserat på dina basbehov. Allt du behöver göra är att kontrollera och bekräfta listan.</p>
+          </div>
+          <div class="col-xs-4 col-sm-2">
+            <img src="images/inkopslista.png" alt="Illustration för bekräfta listan" class="img-responsive"/>
+          </div>
+        </div>
+        <h2 class="visible-xs-block">Veckans meny</h2>
+        <div class="row">
+          <div class="col-xs-8 col-sm-7 col-sm-offset-2">
+            <h2 class="hidden-xs">Veckans meny</h2>
+            <p>Skapa en veckomeny och lägg smidigt in ingredienserna som saknas i grundlistan.</p>
+          </div>
+          <div class="col-xs-4 col-sm-2">
+            <img src="images/veckomeny.png" alt="Illustration för veckomeny" class="img-responsive"/>
+          </div>
+        </div>
+        <h2 class="visible-xs-block">Gör det kul att handla!</h2>
+        <div class="row vertical-align">
+          <div class="col-xs-12 col-sm-7 col-sm-offset-2">
+            <h2 class="hidden-xs">Gör det kul att handla!</h2>
+            <p>Med listmi blir det kul att handla. Tävla med din käresta och se i realtid när ni plockar varorna affären! Eller föredrar du att få maten hemskickad? Det är lätt ordnat med ett snabbt klick!</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-7 col-sm-offset-2">
+            <h2>Få tid till allt det där andra...</h2>
+            <p>Spara tid, pengar och frustration och låt listmi ta hand om de tråkiga bitarna av mathandlandet.</p>
+            <form action="/intresseanmalan/index.html" method="post">
+              <input type="submit" class="btn btn-primary btn-lg" value="Jag vill vara med när appen släpps!"/>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div id="cookieDisclaimerConfirmation" class="alert alert-success" style="display: none;">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-7 col-sm-offset-2">
+              <h1><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Tack för förtroendet!</h1> Vi har nu lagt lite kakor på din dator så att vi kan ge dig bästa möjliga upplevelse av vår webbplats!
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="cookieDisclaimer" class="alert alert-warning">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-7 col-sm-offset-2">
+              <h1><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Observera!</h1> Den här webbplatsen använder cookies. <a href="kakor/index.html">Läs mer</a>
+              <button id="closeDisclaimerBtn" class="btn btn-warning btn-xs">Jag förstår</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div><!-- container -->
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/custom.js"></script>
+</body>
+</html>

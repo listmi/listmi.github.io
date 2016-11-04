@@ -14,51 +14,114 @@ Komplementfärg - neutral
 #8EA4A4
 #D2DBDA tint
 
-Komplementfärg - klick
+Komplementfärg - orange
 #7D5106 shade
 #B07209
 #FBA30D full
 #FDD186
 #FEEDCF tint
+
+#09BCB9 for links?
+
+#620700 (darkred)
+#AF0C00 (red) for errors
 */
 
 body {
-  background: #fff; /* For browsers that do not support gradients */
-  color: #1D4948;
+  background: #143333;
+  color: #d2dbda;
+  font-family: 'Droid Sans', sans-serif;
   padding-top: 0;
 }
 
 .header {
+  background-color: #143333; /* #00A746 = 5% of primary */
+}
+
+.startpage .header {
+  background: #143333; /* fallback */
+  background-image: url('../images/groceries.jpg'); /* https://www.flickr.com/photos/truk/23335164/ */
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: inset 0 0 0 1000px rgba(20, 51, 51,.7); /* rgba(0, 167,70,.7) #00A746 = 5% of primary */
+  background-size: cover;
+}
+
+a {
+  color: #d2dbda;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+a.logolink:hover {
+  background-color: transparent;
+  color: inherit;
+}
+
+.active {
+  color: #8EA4A4;
+}
+
+dl {
+  margin-top: 15px;
+}
+
+dd {
+  margin-bottom: 15px;
 }
 
 .teaser {
-  background-color: #00A746; /* 5% of primary */
-  color: #143333;
-  padding: 1em;
-  margin-bottom: 20px;
-  /* text-align: center; */
+  color: #d2dbda;
+  padding: 5em 1em 8em 1em;
+  text-align: center;
 }
 
 .teaser h1 {
     color: #fff;
+    font-size: 2.5em;
+    margin-bottom: 1em;
+}
+
+.anchor-arrow {
+    color: #0E2424;
+    font-size: 2.5em;
+    background-color: #FBA30D;
+    width: 1.8em;
+    height: 1.8em;
+    border-radius: 100%;
+    text-align: center;
+    display: inline-block;
+    line-height: 1.7em;
+    margin-top: 2.5em;
 }
 
 .logolink {
   display: inline-block;
-  padding: 20px 0 20px 0;
 }
 
 .main {
-  background-color: #fff;
+  background: #fff;
+  color: #1D4948;
+  padding: 20px 0;
 }
 
-h1, h2, h3, p {
-  font-family: 'Droid Sans', sans-serif;
+.main a {
+  color: #c6149d;
+  text-decoration: underline;
+}
 
+.main a:hover {
+  background-color: #c6149d;
+  color: #fff;
 }
 
 h1 {
-    margin-bottom: 10px;
+  font-size: 2em;
+  margin-bottom: 10px;
 }
 
 h1.modal-title {
@@ -84,9 +147,96 @@ p.slogan {
   font-size: 1.6em;
 }
 
+/* NAVIGATION */
+.nav > li > span {
+    color: #8EA4A4;
+    position: relative;
+    display: block;
+    padding: 15px;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+  text-decoration: underline;
+  background-color: #d2dbda;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+.navbar-brand {
+  height: auto;
+  padding: 0;
+}
+
+.navbar-default {
+  background-color: transparent;
+  border-color: transparent;
+  padding: 2em 0;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #d2dbda;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #fff;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #fff;
+    background-color: transparent;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: transparent;
+}
+
+.navbar-default .navbar-collapse {
+  border-color: #d2dbda;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #d2dbda;
+}
+
+.navbar-toggle {
+  border: 0;
+  margin-top: 0.7em;
+  color: #fff;
+  font-size: 2em;
+}
+
+/* MISC */
+.enterprise-info {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.enterprise-info img.logo {
+    vertical-align: baseline;
+    margin-right: 3px;
+}
+
+.enterprise-info .fa {
+  margin-right: 4px;
+}
+
+.enterprise-info a {
+  text-decoration: none;
+}
+
+.enterprise-info a:hover {
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+/* FOOTER */
 .footer {
-  background: #143333;
-  color: #d2dbda;
   text-align: center;
 }
 
@@ -98,16 +248,26 @@ p.slogan {
   margin: 10px 0 20px 0;
 }
 
+.footer .row {
+  margin-bottom: 20px;
+}
+
+/* BUTTONS */
 .btn-primary {
-  background-color: #00af49; /* #00af49 */
+  background-color: #FBA30D;
   color: #0E2424;
   border: none;
-  font-size: 16px;
+  font-size: 18px;
+}
+
+.btn-lg {
+  padding: 1em 2em;
 }
 
 .btn-primary:hover {
-  background-color: #007B33;
+  background-color: #FDD186;
   border-color: #005724;
+  color: #163a3a;
 }
 
 .btn-primary:active,
@@ -119,13 +279,54 @@ p.slogan {
 .btn-primary.active:focus,
 .btn-primary:active.focus,
 .btn-primary.active.focus {
+    background-color: #FDD186;
+    border-color: #FBA30D;
+}
+
+/*
+.btn-primary {
+  background-color: ;
+  border: none;
+  font-size: 16px;
+}
+*/
+
+.footer .btn-primary {
+  background-color: #00af49; /* grön */
+  color: #0E2424;
+}
+
+.footer .btn-primary:hover {
+  background-color: #007B33;
+  border-color: #005724;
+}
+
+.footer .btn-primary:active,
+.footer .btn-primary.active,
+.footer .btn-primary:focus,
+.footer .btn-primary:active:hover,
+.footer .btn-primary.active:hover,
+.footer .btn-primary:active:focus,
+.footer .btn-primary.active:focus,
+.footer .btn-primary:active.focus,
+.footer .btn-primary.active.focus {
     background-color: #007B33;
     border-color: #005724;
 }
 
+.btn-warning {
+  background-color: #FBA30D;
+  color: #4f3202;
+}
+
+/** MODALS **/
 .modal-header {
   border-bottom: 0;
   padding: 15px 15px 0 15px;
+}
+
+.modal-body {
+  color: #1D4948;
 }
 
 .modal-footer {
@@ -150,13 +351,92 @@ p.slogan {
     align-items: center;
 }
 
+/* ALERTS */
+.alert {
+  border-radius: 0;
+  margin-bottom: 0;
+  border: 0;
+}
+
+.alert h1 {
+  font-size: 1em;
+  font-weight: bold;
+  display: inline;
+}
+
+.alert p {
+  font-size: 1em;
+}
+
+/* länkar i alertrutor har samma färg som texten men är understrukna. */
+.alert a {
+  color: inherit;
+  border: 0;
+}
+
+/* tänkte att felmeddelandet kunde sticka ut. */
+.alert-danger {
+    background-color: #AF0C00; /* #ffe4e2 - trött på rosa */
+    color: #fff;
+}
+
+.alert-warning {
+    background-color: #FEEDCF;
+    color: #6d4602;
+}
+
+.alert-success {
+  background-color: #CCEFDB;
+  color: #005021;
+}
+
+/* TABLES */
+caption {
+  color: #007b33;
+  font-size: 1.5em;
+}
+
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  font-weight: normal;
+  padding-left: 0;
+}
+
+/* MEDIA QUERIES */
+@media (orientation: landscape) {
+  .teaser {
+    padding-top: 1.5em;
+    padding-bottom: 5em;
+  }
+
+  .teaser h1 {
+    margin-bottom: .5em;
+  }
+}
+
 @media (min-width: 768px) {
-  .teaser,
+  .teaser {
+    padding: 8em 1em 14em 1em;
+  }
+
   .row {
-    margin-bottom: 50px;
+    margin-bottom: 5em;
   }
 
   .teaser .row {
+    margin-bottom: 1.5em;
+  }
+
+  .navbar {
     margin-bottom: 20px;
+  }
+
+  .navbar-default .navbar-nav > li > a,
+  .navbar-default .navbar-nav > li > span {
+      margin-top: 1.5em;
   }
 }
