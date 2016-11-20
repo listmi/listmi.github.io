@@ -211,6 +211,10 @@ p.slogan {
   font-size: 2em;
 }
 
+.bottom-nav {
+  margin-bottom: 20px;
+}
+
 /* MISC */
 .enterprise-info {
   margin-top: 20px;
