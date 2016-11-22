@@ -101,12 +101,14 @@ var submitted=false;
             <form id="intresseanmalan">
               <div class="form-group">
                 <label for="email" class="control-label">E-postadress</label>
-                <input id="email" type="email" class="form-control" required="" oninvalid="this.setCustomValidity('Du måste ange en korrekt e-postadress.')"/>
+                <input id="email" type="email" class="form-control" required=""
+                       oninvalid="this.setCustomValidity('Du måste ange en korrekt e-postadress.')"
+                       oninput="setCustomValidity('')"/>
               </div>
               <fieldset class="form-group">
                 <legend class="sr-only">Godkännande av listmis sekretesspolicy</legend>
                 <div class="checkbox">
-                  <label><input type="checkbox" id="acceptConditions" required=""  oninvalid="this.setCustomValidity('Du måste godkänna våra användarvillkor.')"/> Jag accepterar att listmi sparar min e-postadress så att jag kan bli meddelad när appen släpps (i enlighet med <a href="#" target="_blank" data-toggle="modal" data-target="#personuppgifterModal">listmis sekretesspolicy <span class="fa fa-external-link" aria-hidden="true"></span></a>)</label>
+                  <label><input type="checkbox" id="acceptConditions" required="" oninvalid="this.setCustomValidity('Du måste godkänna våra användarvillkor.')" onchange="setCustomValidity('')"/> Jag accepterar att listmi sparar min e-postadress så att jag kan bli meddelad när appen släpps i enlighet med <a href="#" target="_blank" data-toggle="modal" data-target="#personuppgifterModal">listmis sekretesspolicy <span class="fa fa-external-link" aria-hidden="true"></span></a></label>
                 </div>
               </fieldset>
               <input type="submit" class="btn btn-primary btn-block btn-lg" value="Skicka" />
