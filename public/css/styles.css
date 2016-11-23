@@ -28,7 +28,6 @@ Komplementfärg - orange
 */
 
 body {
-  overflow: hidden;
   background: #143333;
   color: #d2dbda;
   font-family: 'Droid Sans', sans-serif;
@@ -78,19 +77,27 @@ dd {
 .teaser {
   color: #fff; /* #d2dbda */
   padding: 5em 1em 8em 1em;
-  text-align: center;
 }
 
 .teaser h1 {
+    background-color: #000;
+    box-shadow: 1.25rem 0 0 #000,-1rem 0 0 #000;
     color: #fff;
-    font-size: 2.5em;
-    margin-bottom: 1em;
+    display: inline;
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 1.9em;
+    margin-bottom: 0;
+    padding: 7px;
 }
 
-.teaser h1,
-.teaser .slogan {
-  /*background-color: #1d4948;
-  box-shadow: inset 0 0 0 1000px rgba(125,81,6,.7); /* rgba(0, 167,70,.7) #00A746 = 5% of primary */
+.slogan {
+  display: inline;
+  font-size: 1.6em;
+  background-color: #000;
+  box-shadow: 1.25rem 0 0 #000,-1rem 0 0 #000;
+  line-height: 2em;
+  padding: 7px;
 }
 
 .anchor-arrow {
@@ -148,10 +155,6 @@ h2 {
 
 p {
     font-size: 1.2em;
-}
-
-p.slogan {
-  font-size: 1.6em;
 }
 
 /* NAVIGATION */
@@ -294,14 +297,6 @@ p.slogan {
     border-color: #FBA30D;
 }
 
-/*
-.btn-primary {
-  background-color: ;
-  border: none;
-  font-size: 16px;
-}
-*/
-
 .footer .btn-primary {
   background-color: #00af49; /* grön */
   color: #0E2424;
@@ -432,6 +427,11 @@ caption {
 @media (min-width: 768px) {
   .teaser {
     padding: 8em 1em 14em 1em;
+    text-align: center;
+  }
+
+  .teaser h1 {
+    font-size: 2.5em;
   }
 
   .row {
