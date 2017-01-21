@@ -214,6 +214,14 @@ p {
     color: #d2dbda;
 }
 
+.icon-link * {
+  vertical-align: middle;
+}
+
+.icon-link img {
+  margin-right: 5px;
+}
+
 .navbar-toggle {
   border: 0;
   margin-top: 0.7em;
