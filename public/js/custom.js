@@ -77,7 +77,6 @@ function postBetaForm() {
       },
       type: "POST",
       dataType: "xml",
-      crossDomain: true,
       statusCode: {
         200: function() {
           window.location = tackSida;
