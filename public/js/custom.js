@@ -84,6 +84,9 @@ function postBetaForm() {
         0: function (){
           window.location = tackSida;
         }
+      },
+      error: function() {
+        $('#errorMessage').show(); // visar felmeddelande    
       }
     });
   } else {
