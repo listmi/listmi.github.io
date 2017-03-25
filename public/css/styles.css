@@ -157,6 +157,16 @@ p {
     font-size: 1.2em;
 }
 
+/* FORMS */
+legend.control-label {
+  border-bottom: 0;
+  color: inherit;
+  display: inline-block;
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: -5px;
+}
+
 /* NAVIGATION */
 .nav > li > span {
     color: #8EA4A4;

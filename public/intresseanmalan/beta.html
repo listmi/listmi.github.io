@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <!-- Google Tag Manager -->
+  <script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5KXXMM');</script>
+<!-- End Google Tag Manager -->
+<title>Testa vår Beta-app! | listmi</title>
+<!-- Styles -->
+<link rel="stylesheet" href="../css/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/font-awesome-4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" href="../css/styles.css">
+
+<!-- Favicons etc. -->
+<link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../images/favicon/favicon-32x32.png?v=2" sizes="32x32">
+<link rel="icon" type="image/png" href="../images/favicon/favicon-16x16.png?v=2" sizes="16x16">
+<link rel="manifest" href="../images/favicon/manifest.json">
+<link rel="mask-icon" href="../images/favicon/safari-pinned-tab.svg"><!-- color="#5bbad5" -->
+<meta name="theme-color" content="#ffffff">
+<!-- /Favicons -->
+<link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet"/>
+<meta name="theme-color" content="#ffffff">
+<script>
+var submitted=false;
+</script>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5KXXMM" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="personuppgifterModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Stäng"><span aria-hidden="true">&times;</span></button>
+          <h2 class="modal-title" id="myModalLabel">listmis sekretesspolicy</h2>
+        </div>
+        <div class="modal-body">
+          <p>listmi skulle vilja att du lämnar vissa uppgifter om dig själv till bolaget.</p>
+          <p>Den uppgiften vi avser att samla in och behandla är din e-postadress.</p>
+          <p>Du avgör själv om du vill lämna din e-postadress till oss. E-postadressen kommer endast att behandlas av oss inom företaget.</p>
+          <p>Du har enligt 26 § personuppgiftslagen (1998:204) rätt att gratis, en gång per kalenderår, efter skriftligt undertecknad ansökan ställd till oss, få besked om vilka personuppgifter om dig som vi behandlar och hur vi behandlar dessa. Du har också rätt att enligt 28 § personuppgiftslagen begära rättelse i fråga om personuppgifter som vi behandlar om dig.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Stäng</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="listmi-theme">
+    <div id="errorMessage" class="alert alert-danger" style="display: none;" role="alert">
+      <h1><span class="fa fa-exclamation-triangle" aria-hidden="true"></span> Något har gått fel.</h1>
+      <p>Vi lyckades inte spara din e-postadress. Var vänlig och försök igen. Skulle felet inte försvinna kan du ta kontakt med vår <a href="mailto:support@listmi.com">support</a>.</p>
+    </div>
+    <header class="header">
+      <div class="container">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
+                <span class="sr-only">Visa meny</span>
+                <span class="fa fa-bars" aria-hidden="true"></span>
+              </button>
+              <a href="/" class="logolink navbar-brand">
+                <img src="../images/logo_white.svg" alt="listmi Logotype" width="150" />
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="main-menu">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="https://www.facebook.com/listmisverige/" target="_blank" class="icon-link"><img src="../images/facebook_15x15.png" alt="Facebook logotyp"/> <span>Gilla oss på Facebook</span></a></li>
+                <li><a href="/om-oss/">Om oss</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main class="main">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-5 col-sm-offset-2">
+            <h1>Testa vår Beta-app!</h1>
+            <p>Vilken e-postadress vill du att vi skickar informationen till? <small><em><strong>Observera</strong> att det för tillfället krävs att du har en gmail-adress.</em></small></p>
+            <form id="intresseanmalan-beta">
+              <div class="form-group">
+                <label for="email" class="control-label">E-postadress</label>
+                <div class="input-group">
+                  <input id="email" type="text" class="form-control" required=""
+                  oninvalid="this.setCustomValidity('Du måste ange en korrekt gmail-adress.')"
+                  oninput="setCustomValidity('')"/>
+                  <div class="input-group-addon">@gmail.com</div>
+                </div>
+              </div>
+              <fieldset class="form-group">
+                <legend class="control-label">Operativsystem</legend>
+                <div class="radio">
+                  <label><input type="radio" name="operativsystem" id="android" value="Android" required="" />Android</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="operativsystem" id="ios" value="IOS" required=""/>IOS</label>
+                </div>
+              </fieldset>
+              <fieldset class="form-group">
+                <legend class="sr-only">Godkännande av listmis sekretesspolicy</legend>
+                <div class="checkbox">
+                  <label><input type="checkbox" id="acceptConditions" required="" oninvalid="this.setCustomValidity('Du måste godkänna våra användarvillkor.')" onchange="setCustomValidity('')"/> Jag accepterar att listmi sparar min e-postadress så att jag kan bli meddelad när appen släpps i enlighet med <a href="#" target="_blank" data-toggle="modal" data-target="#personuppgifterModal">listmis sekretesspolicy <span class="fa fa-external-link" aria-hidden="true"></span></a></label>
+                </div>
+              </fieldset>
+              <input type="submit" class="btn btn-primary btn-block btn-lg" value="Skicka" />
+            </form>
+          </div>
+        </div>
+      </div><!-- container -->
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="enterprise-info row">
+          <div class="col-xs-12 col-sm-2 col-sm-offset-1 col-md-offset-2">
+            <strong>Din o Bror AB</strong>
+          </div>
+          <div class="col-xs-12 col-sm-5 col-md-3">
+            <a href="https://goo.gl/maps/CXVNXGB1o3t" target="_blank"><span class="fa fa-map-marker" aria-hidden="true"></span> Anckargripsgatan 3, 211 19 Malmö</a>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-md-2">
+            <a href="mailto:hello@listmi.com"><span class="fa fa-envelope" aria-hidden="true"></span> hello@listmi.com</a>
+          </div>
+        </div>
+        <nav class="bottom-nav">
+          <a href="https://www.facebook.com/listmisverige/" target="_blank" class="icon-link"><img src="../images/facebook_15x15.png" alt="Facebook logotyp"/> <span>Gilla oss på Facebook</span></a> | <a href="/sekretesspolicy/">Sekretesspolicy</a> | <a href="/kakor/">Om våra kakor</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/custom.js"></script>
+</body>
+</html>
