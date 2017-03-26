@@ -128,7 +128,8 @@ dd {
   padding: 20px 0;
 }
 
-.main a {
+.main a,
+body.fun .main a {
   color: #c6149d;
   text-decoration: underline;
 }
