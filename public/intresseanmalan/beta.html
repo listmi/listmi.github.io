@@ -98,24 +98,20 @@ var submitted=false;
         <div class="row">
           <div class="col-xs-12 col-sm-5 col-sm-offset-2">
             <h1>Testa vår Beta-app!</h1>
-            <p>Vilken e-postadress vill du att vi skickar informationen till? <small><em><strong>Observera</strong> att det för tillfället krävs att du har en gmail-adress.</em></small></p>
-            <form id="intresseanmalan-beta">
+            <p>Vilken e-postadress vill du att vi skickar informationen till? <small><em><strong>Observera</strong> att det för tillfället krävs att du har en gmail-adress. Om du vill testa med en annan email-adress så vänligen kontakta oss på <a href="mailto:hello@listmi.com">hello@listmi.com</a>.</em></small></p>
+            <form id="beta">
               <div class="form-group">
-                <label for="email" class="control-label">E-postadress</label>
-                <div class="input-group">
-                  <input id="email" type="text" class="form-control" required=""
-                  oninvalid="this.setCustomValidity('Du måste ange en korrekt gmail-adress.')"
-                  oninput="setCustomValidity('')"/>
-                  <div class="input-group-addon">@gmail.com</div>
-                </div>
+                <label for="gmail" class="control-label">E-postadress</label>
+                <input id="gmail" name="emailAddress" type="email" class="form-control" required=""
+                oninput="setCustomValidity('')"/>
               </div>
-              <fieldset class="form-group">
+              <fieldset class="form-group required">
                 <legend class="control-label">Operativsystem</legend>
-                <div class="radio">
-                  <label><input type="radio" name="operativsystem" id="android" value="Android" required="" />Android</label>
+                <div class="checkbox">
+                  <label><input type="checkbox" name="entry.1102873716" id="android" value="Android"/>Android</label>
                 </div>
-                <div class="radio">
-                  <label><input type="radio" name="operativsystem" id="ios" value="IOS" required=""/>IOS</label>
+                <div class="checkbox">
+                  <label><input type="checkbox" name="entry.1102873716" id="ios" value="iOS"/>iOS</label>
                 </div>
               </fieldset>
               <fieldset class="form-group">
@@ -124,7 +120,7 @@ var submitted=false;
                   <label><input type="checkbox" id="acceptConditions" required="" oninvalid="this.setCustomValidity('Du måste godkänna våra användarvillkor.')" onchange="setCustomValidity('')"/> Jag accepterar att listmi sparar min e-postadress så att jag kan bli meddelad när appen släpps i enlighet med <a href="#" target="_blank" data-toggle="modal" data-target="#personuppgifterModal">listmis sekretesspolicy <span class="fa fa-external-link" aria-hidden="true"></span></a></label>
                 </div>
               </fieldset>
-              <input type="submit" class="btn btn-primary btn-block btn-lg" value="Skicka" />
+              <input type="submit" class="btn btn-primary btn-block btn-lg" value="Skicka" onclick="validateBetaForm();"/>
             </form>
           </div>
         </div>
