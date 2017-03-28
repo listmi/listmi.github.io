@@ -134,7 +134,8 @@ body.fun .main a {
   text-decoration: underline;
 }
 
-.main a:hover {
+.main a:hover,
+body.fun .main a:hover {
   background-color: #c6149d;
   color: #fff;
 }

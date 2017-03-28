@@ -14,18 +14,17 @@ function getCookie(cname) {
 }
 
 if (getCookie('listmiCookie').length > 0) {
-  $( "#cookieDisclaimer" ).hide();
+  $("#cookieDisclaimer").hide();
 }
 
 $( "#closeDisclaimerBtn" ).click(function() {
   var expireDate = new Date();
   expireDate.setFullYear(expireDate.getFullYear() + 1);
   document.cookie = "listmiCookie=accepted;expires=" + expireDate.getUTCDate();
-  $( "#cookieDisclaimer" ).fadeOut(600, 'linear', function() {
+  $("#cookieDisclaimer").fadeOut(600, 'linear', function() {
     $("#cookieDisclaimerConfirmation").fadeIn(600, 'linear');
     $('#cookieDisclaimerConfirmation').delay(8000).fadeOut(600, 'linear');
   });
-
 });
 
 function validateEmail(adress) {
@@ -33,10 +32,24 @@ function validateEmail(adress) {
   return re.test(adress);
 }
 
-// Testar enbart början på adressen
-function validateGmail(adress) {
-  var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))$/; // @gmail.([a-zA-Z]{2,})
-  return re.test(adress);
+function validateBetaForm() {
+  // Validate gmail
+  document.getElementById("gmail").setCustomValidity('');
+  var emailAddress = $("#gmail").val();
+  var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@gmail.com$/;
+  if(!re.test(emailAddress)) {
+    document.getElementById("gmail").setCustomValidity('Du har inte angett en korrekt gmail-adress.');
+  }
+
+  // Validate OS fieldset
+  $('#android, #ios').each(function() {
+    this.setCustomValidity('');
+  });
+  if ($("fieldset.required :checkbox:checked").length === 0) {
+    $('#android, #ios').each(function() {
+      this.setCustomValidity('Du måste välja minst ett operativsystem.')
+    });
+  }
 }
 
 function postForm() {
@@ -50,10 +63,10 @@ function postForm() {
       type: "POST",
       dataType: "xml",
       statusCode: {
-        0: function (){
+        0: function() {
           window.location = tackSida;
         },
-        200: function (){
+        200: function() {
           window.location = tackSida;
         }
       }
@@ -63,35 +76,24 @@ function postForm() {
   }
 }
 
-function postBetaForm() {
-  var email = $('#email').val();
-  var os = $("input[type='radio'][name='operativsystem']:checked").val();
+function postBetaForm(serializedData) {
+  event.preventDefault();
   var accepted = $('#acceptConditions').prop('checked');
   var tackSida = location.protocol + '//'+ location.host + "/tack/";
-  if ((accepted) && ((email !== "") && (validateGmail(email)))) {
-    $.ajax({
+  $.ajax({
       url: "https://docs.google.com/a/matkvitton.se/forms/d/e/1FAIpQLSewbUqJUguTseUaQvJeAyzxEt1evb60zGzVbjMuPXnEmQLuEA/formResponse",
-        data: {
-          "emailAddress" : email+'@gmail.com',
-          "entry.1102873716": os
-      },
+      data: serializedData,
       type: "POST",
       dataType: "xml",
       statusCode: {
-        200: function() {
+        0: function() {
           window.location = tackSida;
         },
-        0: function (){
+        200: function() {
           window.location = tackSida;
         }
-      },
-      error: function() {
-        $('#errorMessage').show(); // visar felmeddelande    
       }
-    });
-  } else {
-    $('#errorMessage').show(); // visar felmeddelande
-  }
+  });
 }
 
 $(document).ready(function(){
@@ -99,8 +101,8 @@ $(document).ready(function(){
     postForm();
     return false;
   });
-  $('#intresseanmalan-beta').submit(function() {
-    postBetaForm();
-    return false;
+  $('#beta').submit(function() {
+    var serializedFormData = $("#beta").serialize();
+    postBetaForm(serializedFormData);
   });
 });
