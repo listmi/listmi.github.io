@@ -1,25 +1,34 @@
-var validFields = {
-  gmail: true,
-  operativsystem: true,
-  useragreements: true,
+var fields = {
+  gmail: {
+    valid: true,
+    message: "<li><label for='gmail'>E-postadress</label></li>"
+  },
+  operativsystem: {
+    valid: true,
+    message: "<li>Operativsystem</li>"
+  },
+  useragreements: {
+    valid: true,
+    message: "<li>Användarvillkor</li>"
+  }
 };
 
 function validateGmail() {
   var emailAddress = $("#gmail").val();
   var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@gmail.com$/;
   if(emailAddress && re.test(emailAddress)) {
-    validFields.gmail = true;
+    fields.gmail.valid = true;
   } else {
-    validFields.gmail = false;
+    fields.gmail.valid = false;
   }
 }
 
 function validateOS() {
 
   if (($("#android:checked").length === 0) && ($("#ios:checked").length === 0) ) {
-    validFields.operativsystem = false;
+    fields.operativsystem.valid = false;
   } else {
-    validFields.operativsystem = true;
+    fields.operativsystem.valid = true;
   }
 }
 
@@ -27,27 +36,31 @@ function validateUserAgreements() {
 
   console.log("UA checked?"+$("#useragreements:checked").length);
   if ($("#useragreements:checked").length > 0) {
-    validFields.useragreements = true;
+    fields.useragreements.valid = true;
   } else {
-    validFields.useragreements = false;
+    fields.useragreements.valid = false;
   }
 }
 
 function decorateForm(fields) {
-  $("#error-summary").hide(); // Clear messages
+  $("#error-summary").html(""); // Clear messages
+  var errors = [];
   for (var key in fields) {
     // skip loop if the property is from prototype
     if (!fields.hasOwnProperty(key)) continue;
-
-    if (fields[key]) {
-      $("#error-summary .messages ."+key).hide();
+    if (fields[key].valid) {
       $("#"+key).closest(".form-group").removeClass('has-error');
     } else {
-      $("#error-summary .messages ."+key).show();
+      errors.push(fields[key].message);
       $("#"+key).closest(".form-group").addClass('has-error');
-      $("#error-summary").show();
-      $("#error-summary").focus();
     }
+  }
+  if (errors.length > 0) {
+    $("#error-summary").append("<h1><span class='fa fa-exclamation-triangle' aria-hidden='true'></span> Vänligen korrigera följande fält</h1>");
+    $("#error-summary").append("<ul>");
+    $("#error-summary ul").append(errors.join(''));
+    $("#error-summary").show();
+    $("#error-summary").focus();
   }
 }
 
@@ -56,7 +69,7 @@ function validateBetaForm() {
   validateGmail();
   validateOS();
   validateUserAgreements();
-  decorateForm(validFields);
+  decorateForm(fields);
 }
 
 function postBetaForm(serializedData) {
@@ -81,10 +94,11 @@ $(document).ready(function(){
 
   $('#beta').submit(function(event) {
     event.preventDefault();
+
     var serializedFormData = $("#beta").serialize();
-    if (validFields.gmail &&
-      validFields.operativsystem &&
-      validFields.useragreements) {
+    if (fields.gmail.valid &&
+      fields.operativsystem.valid &&
+      fields.useragreements.valid) {
         postBetaForm(serializedFormData);
       }
     });
