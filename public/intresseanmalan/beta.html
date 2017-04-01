@@ -93,87 +93,82 @@ var submitted=false;
       <div class="container">
         <div class="row">
           <div class="col-xs-12 col-sm-5 col-sm-offset-2">
-            <div id="error-summary" class="alert alert-danger" style="display: none;" role="alert">
-              <h1><span class="fa fa-exclamation-triangle" aria-hidden="true"></span> Var vänlig kontrollera följande:</h1>
-              <ul class="messages">
-                <li class="gmail" style="display: none;"><label for='gmail'>E-postadress</label></li>
-                <li class="operativsystem">Operativsystem</li>
-                <li class="useragreements">Användarvillkor</li>
-              </ul>
-            </div>
-            <h1>Testa vår Beta-app!</h1>
-            <p>Vilken e-postadress vill du att vi skickar informationen till? <small><em><strong>Observera</strong> att det för tillfället krävs att du har en gmail-adress. Om du vill testa med en annan email-adress så vänligen kontakta oss på <a href="mailto:hello@listmi.com">hello@listmi.com</a>.</em></small></p>
             <form id="beta" method="post">
+              <div id="error-summary" class="alert alert-danger" role="alert" aria-atomic="true" style="display: none;">
+              </div>
+              <h1>Testa vår Beta-app!</h1>
+              <p>Vilken e-postadress vill du att vi skickar informationen till? <small><em><strong>Observera</strong> att det för tillfället krävs att du har en <span class="sr-only">g-mail</span><span aria-hidden="true">gmail</span>-adress. Om du vill testa med en annan email-adress så vänligen kontakta oss på <a href="mailto:hello@listmi.com">hello@listmi.com</a>.</em></small></p>
+
               <div class="form-group">
                 <label for="gmail" class="control-label">
-                  E-postadress
+                  E-postadress <span class="control-label-info">(obligatoriskt)</span>
                   <span class="error-message">
                     <span class="fa fa-warning" aria-hidden="true"></span>
-                    Du har inte angivit en korrekt gmail-adress
+                    Du har inte angivit en korrekt <span class="sr-only">g-mail</span><span aria-hidden="true">gmail</span>-adress
                   </span>
                 </label>
                 <input id="gmail" name="emailAddress" type="email" class="form-control" oninvalid="event.preventDefault()"/>
               </div>
               <fieldset id="operativsystem" class="form-group">
                 <legend class="control-label">
-                  Operativsystem
+                  Operativsystem <span class="control-label-info">(obligatoriskt)</span>
                   <span class="error-message">
                     <span class="fa fa-warning" aria-hidden="true"></span>
-                      Du har inte valt något operativsystem
-                    </span>
+                    Du har inte valt något operativsystem
                   </span>
-                </legend>
-                <div class="checkbox">
-                  <label><input type="checkbox" name="entry.1102873716" id="android" value="Android"/>Android</label>
-                </div>
-                <div class="checkbox">
-                  <label><input type="checkbox" name="entry.1102873716" id="ios" value="iOS"/>iOS</label>
-                </div>
-              </fieldset>
-              <fieldset class="form-group">
-                <legend class="control-label">
-                  <span class="sr-only">Användarvillkor</span>
-                  <span class="error-message">
-                    <span class="fa fa-warning" aria-hidden="true"></span>
-                    Du har inte godkänt våra användarvillkor
-                  </span>
-                </legend>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" id="useragreements"/> Jag accepterar att listmi sparar min e-postadress så att jag kan bli meddelad när appen släpps i enlighet med <a href="#" target="_blank" data-toggle="modal" data-target="#personuppgifterModal">listmis sekretesspolicy <span class="fa fa-external-link" aria-hidden="true"></span></a>
-                  </label>
-                </div>
-              </fieldset>
-              <input type="submit" class="btn btn-primary btn-block btn-lg" value="Skicka" onclick="validateBetaForm();"/>
-            </form>
-          </div>
+                </span>
+              </legend>
+              <div class="checkbox">
+                <label><input type="checkbox" name="entry.1102873716" id="android" value="Android"/>Android</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" name="entry.1102873716" id="ios" value="iOS"/>iOS</label>
+              </div>
+            </fieldset>
+            <fieldset class="form-group">
+              <legend class="control-label">
+                <span class="sr-only sr-only-focusable">Användarvillkor <span class="control-label-info">(obligatoriskt)</span></span>
+                <span class="error-message">
+                  <span class="fa fa-warning" aria-hidden="true"></span>
+                  Du har inte godkänt våra användarvillkor
+                </span>
+              </legend>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" id="useragreements"/> Jag accepterar att listmi sparar min e-postadress så att jag kan bli meddelad när appen släpps i enlighet med <a href="#" target="_blank" data-toggle="modal" data-target="#personuppgifterModal">listmis sekretesspolicy <span class="fa fa-external-link" aria-hidden="true"></span></a>
+                </label>
+              </div>
+            </fieldset>
+            <input type="submit" class="btn btn-primary btn-block btn-lg" value="Skicka" onclick="validateBetaForm();"/>
+          </form>
         </div>
-      </div><!-- container -->
-    </main>
-    <footer class="footer">
-      <div class="container">
-        <div class="enterprise-info row">
-          <div class="col-xs-12 col-sm-2 col-sm-offset-1 col-md-offset-2">
-            <strong>Din o Bror AB</strong>
-          </div>
-          <div class="col-xs-12 col-sm-5 col-md-3">
-            <a href="https://goo.gl/maps/CXVNXGB1o3t" target="_blank"><span class="fa fa-map-marker" aria-hidden="true"></span> Anckargripsgatan 3, 211 19 Malmö</a>
-          </div>
-          <div class="col-xs-12 col-sm-4 col-md-2">
-            <a href="mailto:hello@listmi.com"><span class="fa fa-envelope" aria-hidden="true"></span> hello@listmi.com</a>
-          </div>
-        </div>
-        <nav class="bottom-nav">
-          <a href="https://www.facebook.com/listmisverige/" target="_blank" class="icon-link"><img src="../images/facebook_15x15.png" alt="Facebook logotyp"/> <span>Gilla oss på Facebook</span></a> | <a href="/sekretesspolicy/">Sekretesspolicy</a> | <a href="/kakor/">Om våra kakor</a>
-        </nav>
       </div>
-    </footer>
-  </div>
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="../js/bootstrap.min.js"></script>
-  <script src="../js/custom.js"></script>
-  <script src="../js/beta.js"></script>
+    </div><!-- container -->
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="enterprise-info row">
+        <div class="col-xs-12 col-sm-2 col-sm-offset-1 col-md-offset-2">
+          <strong>Din o Bror AB</strong>
+        </div>
+        <div class="col-xs-12 col-sm-5 col-md-3">
+          <a href="https://goo.gl/maps/CXVNXGB1o3t" target="_blank"><span class="fa fa-map-marker" aria-hidden="true"></span> Anckargripsgatan 3, 211 19 Malmö</a>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-2">
+          <a href="mailto:hello@listmi.com"><span class="fa fa-envelope" aria-hidden="true"></span> hello@listmi.com</a>
+        </div>
+      </div>
+      <nav class="bottom-nav">
+        <a href="https://www.facebook.com/listmisverige/" target="_blank" class="icon-link"><img src="../images/facebook_15x15.png" alt="Facebook logotyp"/> <span>Gilla oss på Facebook</span></a> | <a href="/sekretesspolicy/">Sekretesspolicy</a> | <a href="/kakor/">Om våra kakor</a>
+      </nav>
+    </div>
+  </footer>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/custom.js"></script>
+<script src="../js/beta.js"></script>
 </body>
 </html>
