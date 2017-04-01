@@ -79,7 +79,7 @@ function postBetaForm(serializedData) {
 
 $(document).ready(function(){
 
-  $('#beta').submit(function() {
+  $('#beta').submit(function(event) {
     event.preventDefault();
     var serializedFormData = $("#beta").serialize();
     if (validFields.gmail &&
