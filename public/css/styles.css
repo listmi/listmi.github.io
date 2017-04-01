@@ -35,7 +35,7 @@ body {
 }
 
 body.fun {
-  background: #620700; /* #c6149d */
+  background: #c6149d;
   color: #fff;
 }
 
@@ -124,7 +124,7 @@ dd {
 
 .main {
   background: #fff;
-  color: #1D4948;
+   color: #333;/* #1D4948 mörkgrön */
   padding: 20px 0;
 }
 
@@ -172,6 +172,64 @@ legend.control-label {
   font-size: 1em;
   font-weight: bold;
   margin-bottom: -5px;
+}
+
+.form-group .error-message {
+  display: none;
+}
+
+.form-group.has-error .error-message {
+  display: block;
+}
+
+#error-summary .messages label {
+  font-weight: normal;
+  margin-bottom: 0; 
+}
+
+.has-error .control-label {
+  color: inherit;
+}
+
+.has-error .error-message {
+  color: #AF0C00;
+  font-weight: normal;
+}
+
+.has-error .control-label,
+.has-error .radio,
+.has-error .checkbox,
+.has-error.radio label,
+.has-error.checkbox label,
+.has-error.radio-inline label,
+.has-error.checkbox-inline label {
+  color: inherit;
+}
+
+fieldset.has-error {
+    border-style: solid;
+    border-radius: 4px;
+    padding: 0 10px;
+}
+
+fieldset.has-error legend {
+  float: left;
+  margin-top: 8px
+}
+
+fieldset.has-error .error-message {
+  margin: 4px 0 10px 0;
+}
+
+.has-error .form-control,
+fieldset.has-error {
+  border-color: #AF0C00;
+  border-width: 2px;
+}
+
+.has-error .form-control:focus {
+  border-color: #AF0C00;
+  box-shadow: none;
 }
 
 /* NAVIGATION */
@@ -360,8 +418,9 @@ body.fun .navbar-default .navbar-nav > li > a {
   padding: 15px 15px 0 15px;
 }
 
+
 .modal-body {
-  color: #1D4948;
+  color: #333; /* #1D4948; mörkgrön */
 }
 
 .modal-footer {
@@ -411,8 +470,14 @@ body.fun .navbar-default .navbar-nav > li > a {
 
 /* tänkte att felmeddelandet kunde sticka ut. */
 .alert-danger {
-    background-color: #AF0C00; /* #ffe4e2 - trött på rosa */
+    /*
+    background-color: #AF0C00;
     color: #fff;
+    */
+    background-color: #fff;
+    border: 2px solid #AF0C00;
+    color: #AF0C00;
+    border-radius: 5px;
 }
 
 .alert-warning {

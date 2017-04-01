@@ -66,10 +66,6 @@ var submitted=false;
   </div>
 
   <div class="listmi-theme">
-    <div id="errorMessage" class="alert alert-danger" style="display: none;" role="alert">
-      <h1><span class="fa fa-exclamation-triangle" aria-hidden="true"></span> Något har gått fel.</h1>
-      <p>Vi lyckades inte spara din e-postadress. Var vänlig och försök igen. Skulle felet inte försvinna kan du ta kontakt med vår <a href="mailto:support@listmi.com">support</a>.</p>
-    </div>
     <header class="header">
       <div class="container">
         <nav class="navbar navbar-default">
@@ -97,16 +93,36 @@ var submitted=false;
       <div class="container">
         <div class="row">
           <div class="col-xs-12 col-sm-5 col-sm-offset-2">
+            <div id="error-summary" class="alert alert-danger" style="display: none;" role="alert">
+              <h1><span class="fa fa-exclamation-triangle" aria-hidden="true"></span> Var vänlig kontrollera följande:</h1>
+              <ul class="messages">
+                <li class="gmail" style="display: none;"><label for='gmail'>E-postadress</label></li>
+                <li class="operativsystem">Operativsystem</li>
+                <li class="useragreements">Användarvillkor</li>
+              </ul>
+            </div>
             <h1>Testa vår Beta-app!</h1>
             <p>Vilken e-postadress vill du att vi skickar informationen till? <small><em><strong>Observera</strong> att det för tillfället krävs att du har en gmail-adress. Om du vill testa med en annan email-adress så vänligen kontakta oss på <a href="mailto:hello@listmi.com">hello@listmi.com</a>.</em></small></p>
-            <form id="beta">
+            <form id="beta" method="post">
               <div class="form-group">
-                <label for="gmail" class="control-label">E-postadress</label>
-                <input id="gmail" name="emailAddress" type="email" class="form-control" required=""
-                oninput="setCustomValidity('')"/>
+                <label for="gmail" class="control-label">
+                  E-postadress
+                  <span class="error-message">
+                    <span class="fa fa-warning" aria-hidden="true"></span>
+                    Du har inte angivit en korrekt gmail-adress
+                  </span>
+                </label>
+                <input id="gmail" name="emailAddress" type="email" class="form-control" oninvalid="event.preventDefault()"/>
               </div>
-              <fieldset class="form-group required">
-                <legend class="control-label">Operativsystem</legend>
+              <fieldset id="operativsystem" class="form-group">
+                <legend class="control-label">
+                  Operativsystem
+                  <span class="error-message">
+                    <span class="fa fa-warning" aria-hidden="true"></span>
+                      Du har inte valt något operativsystem
+                    </span>
+                  </span>
+                </legend>
                 <div class="checkbox">
                   <label><input type="checkbox" name="entry.1102873716" id="android" value="Android"/>Android</label>
                 </div>
@@ -115,9 +131,17 @@ var submitted=false;
                 </div>
               </fieldset>
               <fieldset class="form-group">
-                <legend class="sr-only">Godkännande av listmis sekretesspolicy</legend>
+                <legend class="control-label">
+                  <span class="sr-only">Användarvillkor</span>
+                  <span class="error-message">
+                    <span class="fa fa-warning" aria-hidden="true"></span>
+                    Du har inte godkänt våra användarvillkor
+                  </span>
+                </legend>
                 <div class="checkbox">
-                  <label><input type="checkbox" id="acceptConditions" required="" oninvalid="this.setCustomValidity('Du måste godkänna våra användarvillkor.')" onchange="setCustomValidity('')"/> Jag accepterar att listmi sparar min e-postadress så att jag kan bli meddelad när appen släpps i enlighet med <a href="#" target="_blank" data-toggle="modal" data-target="#personuppgifterModal">listmis sekretesspolicy <span class="fa fa-external-link" aria-hidden="true"></span></a></label>
+                  <label>
+                    <input type="checkbox" id="useragreements"/> Jag accepterar att listmi sparar min e-postadress så att jag kan bli meddelad när appen släpps i enlighet med <a href="#" target="_blank" data-toggle="modal" data-target="#personuppgifterModal">listmis sekretesspolicy <span class="fa fa-external-link" aria-hidden="true"></span></a>
+                  </label>
                 </div>
               </fieldset>
               <input type="submit" class="btn btn-primary btn-block btn-lg" value="Skicka" onclick="validateBetaForm();"/>
@@ -150,5 +174,6 @@ var submitted=false;
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="../js/bootstrap.min.js"></script>
   <script src="../js/custom.js"></script>
+  <script src="../js/beta.js"></script>
 </body>
 </html>
