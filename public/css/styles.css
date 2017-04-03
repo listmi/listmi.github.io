@@ -556,13 +556,7 @@ caption {
   }
 }
 
-@media (min-width: 768px) and (orientation: portrait) {
-  .row {
-    margin-bottom: 34em;
-  }
-}
-
-@media (min-width: 768px) and (orientation: landscape) {
+@media (min-width: 768px) {
   .teaser {
     padding: 8em 1em 14em 1em;
     text-align: center;
@@ -573,7 +567,7 @@ caption {
   }
 
   .row {
-    margin-bottom: 14em;
+    margin-bottom: 5em;
   }
 
   .teaser .row {
@@ -588,8 +582,4 @@ caption {
   .navbar-default .navbar-nav > li > span {
       margin-top: 1.5em;
   }
-}
-
-@media (min-width: 768px) {
-
 }
