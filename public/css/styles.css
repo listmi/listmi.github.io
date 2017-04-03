@@ -1,6 +1,7 @@
 /*
 Färgschema för listmi
-Primärfärg:
+
+Primärfärg - grönt
 #005724 shade
 #007B33
 #00af49 full
@@ -28,8 +29,8 @@ Komplementfärg - orange
 */
 
 body {
-  background: #143333;
-  color: #d2dbda;
+  background: #c6149d; /* #143333 */
+  color: #fff; /* #d2dbda */
   font-family: 'Droid Sans', sans-serif;
   padding-top: 0;
 }
@@ -49,7 +50,7 @@ body.fun {
 }
 
 a {
-  color: #d2dbda;
+  color: #fff; /* #d2dbda */
   text-decoration: none;
 }
 
@@ -68,7 +69,7 @@ a.logolink:hover {
 }
 
 .active {
-  color: #8EA4A4;
+  color: #fef2fb; /* #8EA4A4 */
 }
 
 dl {
@@ -151,8 +152,9 @@ h1.modal-title {
 }
 
 h2 {
-    color: #007b33; /* 30% primary */
+    color: #333; /* #007b33 30% primary */
     font-size: 1.5em;
+    font-weight: bold;
     margin-top: 1.2em;
 }
 
@@ -178,6 +180,26 @@ legend.control-label {
   color: #676767;
   font-weight: normal;
 }
+
+/*
+.form-control:focus {
+    border: 2px solid #00af49;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+:focus {
+    outline: #00af49 auto 5px;
+}
+
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+    outline: 5px auto #00af49;
+    outline-offset: -2px;
+}
+*/
 
 .form-group .error-message {
   display: none;
@@ -238,8 +260,18 @@ fieldset.has-error {
 }
 
 /* NAVIGATION */
+/*
+a:focus {
+    outline: 5px auto ;
+    outline-color: #00af49;
+    outline-style: auto;
+    outline-width: 5px;
+    outline-offset: -2px;
+}
+*/
+
 .nav > li > span {
-    color: #8EA4A4;
+    color: #fff; /* #8EA4A4 */
     position: relative;
     display: block;
     padding: 15px;
@@ -248,7 +280,7 @@ fieldset.has-error {
 .nav > li > a:hover,
 .nav > li > a:focus {
   text-decoration: underline;
-  background-color: #d2dbda;
+  background-color: #fff; /* #d2dbda */
 }
 
 .navbar {
@@ -266,7 +298,7 @@ fieldset.has-error {
 }
 
 .navbar-default .navbar-nav > li > a {
-    color: #d2dbda;
+    color: #fff; /* #d2dbda */
 }
 
 body.fun .navbar-default .navbar-nav > li > a {
@@ -291,11 +323,11 @@ body.fun .navbar-default .navbar-nav > li > a {
 }
 
 .navbar-default .navbar-collapse {
-  border-color: #d2dbda;
+  border-color: #fff; /* #d2dbda */
 }
 
 .navbar-default .navbar-nav > li > a {
-    color: #d2dbda;
+    color: #fff; /* #d2dbda */
 }
 
 .icon-link * {
@@ -497,8 +529,9 @@ body.fun .navbar-default .navbar-nav > li > a {
 
 /* TABLES */
 caption {
-  color: #007b33;
+  color: #333; /* #007b33 */
   font-size: 1.5em;
+  font-weight: bold;
 }
 
 .table > thead > tr > th,
@@ -523,7 +556,13 @@ caption {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (orientation: portrait) {
+  .row {
+    margin-bottom: 34em;
+  }
+}
+
+@media (min-width: 768px) and (orientation: landscape) {
   .teaser {
     padding: 8em 1em 14em 1em;
     text-align: center;
@@ -534,7 +573,7 @@ caption {
   }
 
   .row {
-    margin-bottom: 5em;
+    margin-bottom: 14em;
   }
 
   .teaser .row {
@@ -549,4 +588,8 @@ caption {
   .navbar-default .navbar-nav > li > span {
       margin-top: 1.5em;
   }
+}
+
+@media (min-width: 768px) {
+
 }
