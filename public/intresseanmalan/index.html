@@ -97,22 +97,36 @@ var submitted=false;
       <div class="container">
         <div class="row">
           <div class="col-xs-12 col-sm-5 col-sm-offset-2">
+            <div id="error-summary" class="alert alert-danger" role="alert" aria-atomic="true" style="display: none;">
+            </div>
             <h1>Intresseanmälan</h1>
             <p>Vilken e-postadress vill du att vi skickar informationen till?</p>
-            <form id="intresseanmalan">
+            <form id="intresseanmalan" method="post">
               <div class="form-group">
-                <label for="email" class="control-label">E-postadress</label>
-                <input id="email" type="email" class="form-control" required=""
-                       oninvalid="this.setCustomValidity('Du måste ange en korrekt e-postadress.')"
-                       oninput="setCustomValidity('')"/>
+                <label for="email" class="control-label">
+                  E-postadress <span class="control-label-info">(obligatoriskt)</span>
+                  <span class="error-message">
+                    <span class="fa fa-warning" aria-hidden="true"></span>
+                    Du har inte angivit en korrekt e-postadress
+                  </span>
+                </label>
+                <input id="email" name="entry.1243578825" type="email" class="form-control" oninvalid="event.preventDefault()"/>
               </div>
               <fieldset class="form-group">
-                <legend class="sr-only">Godkännande av listmis sekretesspolicy</legend>
+                <legend class="control-label">
+                  <span class="sr-only sr-only-focusable">Användarvillkor <span class="control-label-info">(obligatoriskt)</span></span>
+                  <span class="error-message">
+                    <span class="fa fa-warning" aria-hidden="true"></span>
+                    Du har inte godkänt våra användarvillkor
+                  </span>
+                </legend>
                 <div class="checkbox">
-                  <label><input type="checkbox" id="acceptConditions" required="" oninvalid="this.setCustomValidity('Du måste godkänna våra användarvillkor.')" onchange="setCustomValidity('')"/> Jag accepterar att listmi sparar min e-postadress så att jag kan bli meddelad när appen släpps i enlighet med <a href="#" target="_blank" data-toggle="modal" data-target="#personuppgifterModal">listmis sekretesspolicy <span class="fa fa-external-link" aria-hidden="true"></span></a></label>
+                  <label>
+                    <input type="checkbox" id="useragreements" required="" oninvalid="event.preventDefault()"/> Jag accepterar att listmi sparar min e-postadress så att jag kan bli meddelad när appen släpps i enlighet med <a href="#" target="_blank" data-toggle="modal" data-target="#personuppgifterModal">listmis sekretesspolicy <span class="fa fa-external-link" aria-hidden="true"></span></a>
+                  </label>
                 </div>
               </fieldset>
-              <input type="submit" class="btn btn-primary btn-block btn-lg" value="Skicka" />
+              <input type="submit" class="btn btn-primary btn-block btn-lg" value="Skicka" onclick="validateForm();"/>
             </form>
           </div>
         </div>

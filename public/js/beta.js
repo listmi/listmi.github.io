@@ -56,7 +56,7 @@ function decorateForm(fields) {
     }
   }
   if (errors.length > 0) {
-    $("#error-summary").append("<h1><span class='fa fa-exclamation-triangle' aria-hidden='true'></span> Vänligen korrigera följande fält</h1>");
+    $("#error-summary").append("<h1><span class='fa fa-exclamation-triangle' aria-hidden='true'></span> Vänligen korrigera följande</h1>");
     $("#error-summary").append("<ul>");
     $("#error-summary ul").append(errors.join(''));
     $("#error-summary").show();
